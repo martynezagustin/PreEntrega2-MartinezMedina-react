@@ -14,10 +14,11 @@ function App() {
 
   return (
     <div>
-    <NavBar nombre="Urban Diamond Beats"/>
     <BrowserRouter>
+    <NavBar nombre="Urban Diamond Beats"/>
         <Routes>
           <Route path='/' element={<ItemListContainer />} />
+          <Route path='/category/:categoryId' element={<ItemListContainer />} />
           <Route path='/products/:productId' element={<ProductDetail/>} />
         </Routes>
     </BrowserRouter>

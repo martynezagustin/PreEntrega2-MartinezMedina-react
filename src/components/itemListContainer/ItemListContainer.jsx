@@ -3,18 +3,15 @@ import '../../style.css';
 import Card from '../../components/card/Card';
 import { useFetch } from '../../hooks/useFetch/useFetch';
 import { API_URLS } from '../../constants/index';
-import { useNavigate } from 'react-router-dom';
-import Slider from "../slider/index";
+import { useNavigate, useParams } from 'react-router-dom';
 
 function ItemListContainer() {
   /* eslint-disable react/prop-types */
   const navigate = useNavigate()
-  const [showDetails, setShowDetails] = useState(false)
-  const [productDetail, setProductDetail] = useState(null)
   const [productFiltered, setProductFiltered] = useState([])
   const [cart, setCart] = useState([])
   const { data: products } = useFetch(API_URLS.PRODUCTS.url, API_URLS.PRODUCTS.config)
-  const { data: categories } = useFetch(API_URLS.CATEGORIES.url, API_URLS.CATEGORIES.config)
+  const {categoryId} = useParams()
 
   const onShowDetails = (id) => {
     navigate(`/products/${id}`)
@@ -47,17 +44,16 @@ function ItemListContainer() {
     }
   }
 
+  useEffect(() => {
+    if(categoryId){
+      onFilter(categoryId)
+    } else {
+      setProductFiltered(products)
+    }
+  })
+
   return (
     <div>
-      <div className="categoriesContainer">
-        <Slider>
-        {categories.map((category) => (
-          <div key={category.id} className="categoryContainer">
-            <p>{category.name}</p>
-          </div>
-        ))}
-        </Slider>
-      </div>
       <>
         <p>Beats de Trap, Drill, Rkt.</p>
         <div className="inputContainer">
