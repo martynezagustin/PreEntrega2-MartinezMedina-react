@@ -6,22 +6,26 @@
     background: linear-gradient(rgb(153, 12, 118), rgb(83, 10, 65));
   }
   .navbar-links {
-    color: white;
+    color: rgb(253, 75, 212) !important;
   }
   .navbar-links:hover{
     color: rgb(252, 180, 240);
   }
   .navbar-brand {
-    color: rgb(230, 164, 250);
+    color: rgb(230, 164, 250) !important;
     font-family: sans-serif;
     font-weight: 700;
   }
   .navbar-brand:hover {
-    color: rgb(255, 255, 255);
+    color: rgb(255, 255, 255) !important;
+  }
+  #basic-nav-dropdown{
+    color: whitesmoke;
+    font-weight: bolder;
   }
   .expand-menu {
-    background-color: black;
-    color: violet;
+    background-color: black !important;
+    color: violet !important;
   }
   .navbar-toggler {
     background: linear-gradient(rgb(255, 160, 247), rgb(255, 130, 210));
@@ -36,10 +40,12 @@
     padding: 1.4rem;
     margin: 1.2rem;
     border-radius: 10px;
-    background-color: rgb(255, 130, 210);
+    background-color: rgb(255, 130, 210) !important;
     max-width: 25%;
   }
-  
+  .h1Intro{
+    text-align: center;
+  }
   .cartButttonContainer{
     background: none;
     border: none;
