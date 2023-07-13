@@ -7,9 +7,6 @@ import ProductDetail from './components/product-detail/ProductDetail'
 import { Route, Routes, BrowserRouter } from 'react-router-dom';
 
 function App() {
-  const onShowDetails = (id) => {
-    navigate(`/products/${id}`)
-  }
 
 
   return (
